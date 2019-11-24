@@ -27,7 +27,7 @@ public class pantallaLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDialog1 = new javax.swing.JDialog();
+        jOptionPane1 = new javax.swing.JOptionPane();
         jTextField1 = new javax.swing.JTextField();
         jPasswordField1 = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
@@ -38,17 +38,6 @@ public class pantallaLogin extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel6 = new javax.swing.JLabel();
-
-        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
-        jDialog1.getContentPane().setLayout(jDialog1Layout);
-        jDialog1Layout.setHorizontalGroup(
-            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jDialog1Layout.setVerticalGroup(
-            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,6 +58,11 @@ public class pantallaLogin extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(51, 153, 0));
         jButton1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton1.setText("Acceder");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                guardarFormulario(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel1.setText("Usuario:");
@@ -161,6 +155,24 @@ public class pantallaLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    private void guardarFormulario(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarFormulario
+        // TODO add your handling code here:
+        enviarFormulario(); 
+    }//GEN-LAST:event_guardarFormulario
+    
+    public String[] enviarFormulario(){
+     String[] formulario={jTextField1.getText(), jPasswordField1.getPassword().toString()};   
+     return formulario; 
+    }
+    
+    public void mostrarDialogo(boolean valido){
+        if (valido){
+            jOptionPane1.showMessageDialog(null,"login valido");
+        }
+        else{
+           jOptionPane1.showMessageDialog(null,"login no valido"); 
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -197,14 +209,14 @@ public class pantallaLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JDialog jDialog1;
+    public javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JOptionPane jOptionPane1;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextField1;
