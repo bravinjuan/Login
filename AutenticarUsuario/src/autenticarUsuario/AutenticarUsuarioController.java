@@ -42,7 +42,6 @@ public class AutenticarUsuarioController implements ActionListener {
     public void autenticarUsuario(){
         String username = login.jTextField1.getText().toString();
         String password = login.jPasswordField1.getText().toString();
-        System.out.println(password);
         Usuario usuario;
         usuario = sistema.getUsuario(username);
         if (usuario == null){
